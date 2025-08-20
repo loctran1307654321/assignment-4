@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Simple_caculate {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Nhập hai số nguyên
+        System.out.print("enter number fist: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter number second: ");
+        int num2 = scanner.nextInt();
+
+        // Nhập toán tử
+        System.out.print("Enter operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        int result;
+        boolean valid = true;
+
+        // Xử lý theo toán tử
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println(num1 + " + " + num2 + " = " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println(num1 + " - " + num2 + " = " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println(num1 + " * " + num2 + " = " + result);
+                break;
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("Error :cannot be divided by zero.");
+                    valid = false;
+                } else {
+                    double division = (double) num1 / num2;
+                    System.out.println(num1 + " / " + num2 + " = " + division);
+                }
+                break;
+            default:
+                System.out.println("operator Error.");
+                valid = false;
+        }
+
+    }
+}
