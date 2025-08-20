@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Persons_old {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhập tuổi của người đó: ");
+        int age = scanner.nextInt();
+
+        // Chuyển tuổi thành nhóm tuổi
+        int ageGroup;
+        if (age >= 0 && age <= 12) {
+            ageGroup = 1;
+        } else if (age >= 13 && age <= 19) {
+            ageGroup = 2;
+        } else if (age >= 20 && age <= 59) {
+            ageGroup = 3;
+        } else if (age >= 60) {
+            ageGroup = 4;
+        } else {
+            ageGroup = 0; // Tuổi không hợp lệ
+        }
+
+        // Dùng switch-case để in ra phân loại
+        switch (ageGroup) {
+            case 1:
+                System.out.println("Child");
+                break;
+            case 2:
+                System.out.println("Teenager");
+                break;
+            case 3:
+                System.out.println("Adult");
+                break;
+            case 4:
+                System.out.println("Senior");
+                break;
+            default:
+                System.out.println("Error");
+        }
+
+
+    }
+}
